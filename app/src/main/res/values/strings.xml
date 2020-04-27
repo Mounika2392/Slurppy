@@ -3,4 +3,6 @@
     <string name="action_settings">Settings</string>
     <string name="appbar_scrolling_view_behavior">x</string>
     <string name="recyclerviewactivitystartbutton">Enter Recyclerview activity</string>
+    <string name="title_activity_recycler_view">RecyclerView</string>
+    <string name="sample_string">Sample text</string>
 </resources>

@@ -1,6 +1,8 @@
-package com.learner.slurppy.activties
+package com.learner.slurppy.activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 
 import android.view.Menu
 import android.view.MenuItem
@@ -8,14 +10,25 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.learner.slurppy.R
+import com.learner.slurppy.SampleData
 import com.learner.slurppy.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private var binding: ActivityMainBinding? = null
+    private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.sampleData = SampleData()
+        binding.recyclerviewbutton.setOnClickListener{
+            openRecyclerView()
+        }
+    }
+    fun openRecyclerView(){
+        Log.e("Log", "method called")
+        val intent = Intent(this, RecyclerViewActivity::class.java);
+        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
