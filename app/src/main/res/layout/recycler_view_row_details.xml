@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
@@ -12,8 +12,8 @@
         android:text="@string/sample_string"
         android:id="@+id/tv_albumcount"/>
     <TextView
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_albumcount"
+        app:layout_constraintStart_toEndOf="@id/tv_albumcount"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sample_string"
@@ -28,10 +28,11 @@
     <ImageView
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
         android:contextClickable="true"
         android:tooltipText=""
-        android:id="@+id/image"/>
+        android:id="@+id/image"
+        android:contentDescription="@string/sample_string" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,8 +14,8 @@ interface AlbumService{
 
     var albumService : AlbumService
 
-    @GET("photos/{id}")
-    fun getImages(@Path("id")id : Int) :Call<AlbumResponse>
+    @GET("photos")
+    fun getImages() :Call<List<AlbumResponse>>
 
 
 }
