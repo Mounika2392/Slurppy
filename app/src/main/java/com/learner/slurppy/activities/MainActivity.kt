@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.learner.slurppy.R
 import com.learner.slurppy.SampleData
+import com.learner.slurppy.Transparentactivity.TransparentActivity
 import com.learner.slurppy.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         binding.sampleData = SampleData()
         binding.recyclerviewbutton.setOnClickListener{
             openRecyclerView()
+        }
+        binding.transaprentScreenButton.setOnClickListener{
+            val intent = Intent(this, TransparentActivity::class.java)
+            startActivity(intent)
         }
     }
     fun openRecyclerView(){

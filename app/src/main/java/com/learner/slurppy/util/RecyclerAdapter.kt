@@ -5,9 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.learner.slurppy.R
 import com.learner.slurppy.datamodels.AlbumResponse
 import kotlinx.android.synthetic.main.recycler_view_row_details.view.*
+import java.time.Instant
+import java.time.format.DateTimeFormatter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder as ViewHolder
 
 class RecyclerAdapter : RecyclerView.Adapter<ViewHolder>() {
@@ -47,13 +51,22 @@ class RecyclerAdapter : RecyclerView.Adapter<ViewHolder>() {
         val title = itemView.tv_Title
         val image = itemView.image
 
-        fun bind(albumResponse: AlbumResponse){
-            Log.d("response",albumResponse?.title)
+        fun bind(albumResponse: AlbumResponse) {
+            Log.d("response", albumResponse?.title)
 
-            album.setText(albumResponse.albums)
+            album.setText(albumResponse.albumId)
             id.setText(albumResponse.id)
             title.setText(albumResponse.title)
-//            image.setImageURI(albumResponse.url)
+
+            val requestOptions = RequestOptions()
+                    .placeholder(R.drawable.ic_launcher_background)
+                    .error(R.drawable.ic_launcher_background)
+            Glide.with(itemView.context)
+                    .applyDefaultRequestOptions(requestOptions)
+                    .load(albumResponse.url)
+                    .override(410,260)
+                    .into(image)
+Log.d("response", albumResponse.url)
         }
     }
 

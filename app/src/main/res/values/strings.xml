@@ -5,4 +5,5 @@
     <string name="recyclerviewactivitystartbutton">Enter Recyclerview activity</string>
     <string name="title_activity_recycler_view">RecyclerView</string>
     <string name="sample_string">Sample text</string>
+    <string name="title_activity_transparent_actitivty">TransparentActitivty</string>
 </resources>

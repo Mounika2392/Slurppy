@@ -56,7 +56,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
                 override fun onResponse(call: Call<List<AlbumResponse>>, response: Response<List<AlbumResponse>>) {
                     if (response.code() == 200) {
-                        Log.d("response", response.body()?.get(1)?.title)
+                        response.body()?.get(1)?.title?.let { Log.d("response", it) }
                         albumResponse = response.body()!!
                         recyclerAdapter.setData(albumResponse!!)
                     }
